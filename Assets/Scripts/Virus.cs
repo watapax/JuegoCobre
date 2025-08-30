@@ -46,13 +46,16 @@ public class Virus : MonoBehaviour, ITapeable
     {
         explosionPos = spawnPointExplosion.position;
         Quaternion rot = Quaternion.Euler(new Vector3(-90, 0, 0));
-        Instantiate(hitFX, transform.position, Quaternion.identity);
-        Instantiate(deadFX, explosionPos, rot);
+        PoolFX.instance.SpawnHit(transform.position, Quaternion.identity);
+        //Instantiate(hitFX, transform.position, Quaternion.identity);
+        PoolFX.instance.SpawnExplosion(explosionPos, rot);
+        //Instantiate(deadFX, explosionPos, rot);
         gameObject.SetActive(false);
     }
     public void TapAction(Vector3 _point)
     {
-        Instantiate(hitFX, _point, Quaternion.identity);
+        PoolFX.instance.SpawnHit(_point, Quaternion.identity);
+        //Instantiate(hitFX, _point, Quaternion.identity);
         if (hp < 1) return;
         hp--;
 
