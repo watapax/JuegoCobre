@@ -11,7 +11,8 @@ public class TeleportItem : MonoBehaviour
     {
         if(killItem)
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             return;
         }
         other.GetComponent<CobreBruto>().correaManager = correaManager;

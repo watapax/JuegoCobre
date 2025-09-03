@@ -8,7 +8,7 @@ public class ForzarResolucion : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(1920, 1080,true);
+        Screen.SetResolution(targetWidth, targetHeight, true);
     }
 
 }

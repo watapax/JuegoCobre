@@ -29,10 +29,12 @@ public class Virus : MonoBehaviour, ITapeable
     {
         if (hp > 0)
         {
-           // Instantiate(hitFX, _point, Quaternion.identity);
+            // Instantiate(hitFX, _point, Quaternion.identity);
+            SoundManager.instance.GolpearVirus();
         }
         else
         {
+            SoundManager.instance.MatarVirus();
             splineAnimate.enabled = false;
             //Instantiate(hitFX, _point, Quaternion.identity);
             transform.DOKill();

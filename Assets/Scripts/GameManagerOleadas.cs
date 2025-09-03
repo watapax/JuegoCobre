@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class GameManagerOleadas : MonoBehaviour
 {
+    
     public static GameManagerOleadas instance;
     public float duracionOleada;
     public float tiempoActual;
@@ -33,7 +34,7 @@ public class GameManagerOleadas : MonoBehaviour
         {
             fadeOuts[i].SetActive(true);
         }
-        Invoke("PrimeraRonda", 3.5f);
+        //Invoke("PrimeraRonda", 3.5f);
     }
 
 
@@ -90,6 +91,10 @@ public class GameManagerOleadas : MonoBehaviour
 
         if (nivel < 3)
             Invoke("ReanudarJuego", 3.5f);
+        else
+        {
+            SoundManager.instance.LocucionFinal();
+        }
     }
 
     void Explotar()
@@ -105,7 +110,7 @@ public class GameManagerOleadas : MonoBehaviour
         IniciarJuego();
     }
 
-    void PrimeraRonda()
+    public void PrimeraRonda()
     {
         if (juegoA != null)
             juegoA.PrimeraRonda();

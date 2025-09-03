@@ -35,6 +35,7 @@ public class Edificio : MonoBehaviour
     [ContextMenu("Damage")]
     public void Damage()
     {
+        SoundManager.instance.GolpeaEdificio();
         hp--;
 
         transform.DOKill();
