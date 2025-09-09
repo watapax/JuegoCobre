@@ -88,7 +88,7 @@ public class Virus : MonoBehaviour, ITapeable
         transform.localScale = startScale;
         hp = startHp;
         murio = false;
-        transform.position = Vector3.zero;
+        transform.position = Vector3.one * 999;
         splineAnimate.ElapsedTime = 0;
 
     }
