@@ -1,10 +1,15 @@
+using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TapManager : MonoBehaviour
 {
     public string name;
     public Camera camera;
     public Vector2 coordenadasCamara;
+    public int index;
+    public int score;
+    public TextMeshProUGUI scoreTxt;
+    public Score _score;
     private void Update()
     {
         for(int i = 0; i < Input.touchCount; i++)
@@ -31,6 +36,17 @@ public class TapManager : MonoBehaviour
             {
                 hitInfo.transform.GetComponent<ITapeable>().TapAction(hitInfo.point);
                 hitInfo.transform.GetComponent<ITapeable>().HitFX(hitInfo.point);
+                if(hitInfo.transform.GetComponent<Virus>())
+                {
+                   if(hitInfo.transform.GetComponent<Virus>().hp < 1)
+                    {
+                        score++;
+                        _score.puntaje += 1;
+                        scoreTxt.text = score.ToString();
+                       
+                    }
+                }
+
             }
 
         }

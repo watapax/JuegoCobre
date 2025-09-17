@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Splines;
@@ -8,13 +10,16 @@ using UnityEngine.UI;
 
 public class GameManagerOleadas : MonoBehaviour
 {
-    
+    public Score scoreA, scoreB;
+    public TextMeshProUGUI puntajeA, puntajeB;
     public static GameManagerOleadas instance;
     public float duracionOleada;
     public float tiempoActual;
     public int nivel;
     public JuegoCiudad juegoA, juegoB;
     bool iniciar;
+    public Color color1, color2, color3;
+    public Material materialVirus;
 
     public GameObject virusPrefab;
 
@@ -30,9 +35,10 @@ public class GameManagerOleadas : MonoBehaviour
 
     private void Start()
     {
+        materialVirus.color = color1;
         for (int i = 0; i < fadeOuts.Length; i++)
         {
-            fadeOuts[i].SetActive(true);
+           // fadeOuts[i].SetActive(true);
         }
         //Invoke("PrimeraRonda", 3.5f);
     }
@@ -41,6 +47,15 @@ public class GameManagerOleadas : MonoBehaviour
     public void IniciarJuego()
     {
         iniciar = true;
+
+        if (nivel == 1)
+        {
+            materialVirus.color = color2;
+        }
+        if (nivel == 2)
+        {
+            materialVirus.color = color3;
+        }
 
         if (juegoA != null)
             juegoA.Iniciar();
@@ -73,9 +88,20 @@ public class GameManagerOleadas : MonoBehaviour
     {
 
         Explotar();
-
+        
         iniciar = false;
+        juegoA.desactivar = true;
+        juegoB.desactivar = true;
+        StartCoroutine(DescansoEntreNivel());
+
+    }
+
+    IEnumerator DescansoEntreNivel()
+    {
+        yield return new WaitForSeconds(1);
+
         nivel++;
+
         tiempoActual = 0;
         if (juegoA != null)
         {
@@ -93,6 +119,8 @@ public class GameManagerOleadas : MonoBehaviour
             Invoke("ReanudarJuego", 3.5f);
         else
         {
+            puntajeA.text = scoreA.puntaje.ToString();
+            puntajeB.text = scoreB.puntaje.ToString();
             SoundManager.instance.LocucionFinal();
         }
     }

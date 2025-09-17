@@ -17,7 +17,7 @@ public class VideoCobre : MonoBehaviour
         float l = locCobre.length;
         audioSource.PlayOneShot(locCobre);
         yield return new WaitForSeconds(l);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
 
     }
 }

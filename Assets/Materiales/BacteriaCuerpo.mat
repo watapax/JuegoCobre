@@ -116,8 +116,8 @@ Material:
     - _fadeDistance: 75
     - _thicknes: 0
     m_Colors:
-    - _BaseColor: {r: 0.8117253, g: 0.4009434, b: 1, a: 1}
-    - _Color: {r: 0.81172526, g: 0.40094337, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.49019608, b: 0.007843138, a: 1}
+    - _Color: {r: 0.62352943, g: 0.36470586, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Fake_Sun_Direction: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowTint: {r: 0.85567164, g: 0.38875046, b: 0.9056604, a: 1}

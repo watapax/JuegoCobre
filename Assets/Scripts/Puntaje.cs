@@ -9,6 +9,7 @@ public class Puntaje : MonoBehaviour
 
     public void ActualizarPuntaje(int puntaje)
     {
+
         txtPuntaje.text = puntaje.ToString();
         rectPuntaje.DOScale(1.2f, 0.2f).SetEase(Ease.InSine).OnComplete(() =>
         rectPuntaje.DOScale(1,0.2f).SetEase(Ease.OutSine

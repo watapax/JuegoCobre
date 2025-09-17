@@ -9,6 +9,12 @@ public class ProcesarCobre : MonoBehaviour
     int cantidadCobreProcesado;
     public float velocidadEntradaFrasco, velocidadCaida;
     public Puntaje puntaje;
+    public Score score;
+
+    private void Awake()
+    {
+        score.puntaje = 0;
+    }
 
     public void Procesar(Vector3 pos)
     {
@@ -17,6 +23,7 @@ public class ProcesarCobre : MonoBehaviour
         GameObject cobre = (GameObject)Instantiate(cobreProcesado, pos, Quaternion.identity);
         cobre.GetComponent<CobreLab>().CaerAlFrasco(entradaFrasco.position, posicionesFrasco[cantidadCobreProcesado % posicionesFrasco.Length].position, velocidadEntradaFrasco, velocidadCaida);
         cantidadCobreProcesado++;
+        score.puntaje = cantidadCobreProcesado;
         puntaje.ActualizarPuntaje(cantidadCobreProcesado);
     }
 }

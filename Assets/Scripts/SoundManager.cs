@@ -67,7 +67,15 @@ public class SoundManager : MonoBehaviour
 
     public void LocucionFinal()
     {
+
         bgmSource.DOFade(0, 4).OnComplete(()=> sfxSource.PlayOneShot(locucionFinal));
+        StartCoroutine(Final(locucionFinal.length));
+    }
+
+    IEnumerator Final(float _t)
+    {
+        yield return new WaitForSeconds(_t);
+        onLevelFinish?.Invoke();
     }
 
     public void GolpearVirus()

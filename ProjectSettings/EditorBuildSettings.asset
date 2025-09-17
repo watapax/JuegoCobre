@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/intro.unity
+    guid: c03e4c95414535344af4566d412a8540
+  - enabled: 1
     path: Assets/Scenes/Fase1 cobre.unity
     guid: 2f66ccc91da8cf747a74a59ebc78af78
   - enabled: 1

@@ -5255,7 +5255,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5882,8 +5882,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PUNTAJE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6046,6 +6046,7 @@ MonoBehaviour:
   velocidadEntradaFrasco: 1.4
   velocidadCaida: 0.5
   puntaje: {fileID: 73062775}
+  score: {fileID: 11400000, guid: 204e8fb03da279549bcd48f38e675f71, type: 2}
 --- !u!114 &73062775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28850,6 +28851,10 @@ MonoBehaviour:
   name: Lab A
   camera: {fileID: 598830165}
   coordenadasCamara: {x: 0, y: 0}
+  index: 0
+  score: 0
+  scoreTxt: {fileID: 0}
+  _score: {fileID: 0}
 --- !u!1 &582456692
 GameObject:
   m_ObjectHideFlags: 0
@@ -29280,6 +29285,7 @@ MonoBehaviour:
   velocidadEntradaFrasco: 1.4
   velocidadCaida: 0.5
   puntaje: {fileID: 608156290}
+  score: {fileID: 11400000, guid: 40bf044fe5fbc874a8ba569b89576677, type: 2}
 --- !u!114 &608156290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34363,6 +34369,10 @@ MonoBehaviour:
   name: Mina A
   camera: {fileID: 330585545}
   coordenadasCamara: {x: 0, y: 0}
+  index: 0
+  score: 0
+  scoreTxt: {fileID: 0}
+  _score: {fileID: 0}
 --- !u!4 &800903363
 Transform:
   m_ObjectHideFlags: 0
@@ -39231,6 +39241,10 @@ MonoBehaviour:
   name: Mina A
   camera: {fileID: 541832078}
   coordenadasCamara: {x: 0, y: 0}
+  index: 0
+  score: 0
+  scoreTxt: {fileID: 0}
+  _score: {fileID: 0}
 --- !u!1 &904728978
 GameObject:
   m_ObjectHideFlags: 0
@@ -54834,8 +54848,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PUNTAJE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -57605,6 +57619,10 @@ MonoBehaviour:
   name: Lab A
   camera: {fileID: 905713327}
   coordenadasCamara: {x: 0, y: 0}
+  index: 0
+  score: 0
+  scoreTxt: {fileID: 0}
+  _score: {fileID: 0}
 --- !u!1 &1274314735
 GameObject:
   m_ObjectHideFlags: 0
