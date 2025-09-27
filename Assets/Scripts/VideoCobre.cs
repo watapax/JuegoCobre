@@ -1,23 +1,25 @@
 using UnityEngine;
-using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Video;
 public class VideoCobre : MonoBehaviour
 {
-    public AudioClip locCobre;
-    public AudioSource audioSource;
-    private void Start()
-    {
-        StartCoroutine(PlayAndEvent());
-    }
 
-    IEnumerator PlayAndEvent()
+    public VideoPlayer player;
+
+    IEnumerator Start()
     {
-        float l = locCobre.length;
-        audioSource.PlayOneShot(locCobre);
-        yield return new WaitForSeconds(l);
+        player.Play();
+        yield return new WaitForSeconds(5);
+        
+        while(player.isPlaying)
+        {
+            yield return null;
+        }
         SceneManager.LoadScene(3);
-
     }
+
+
+
+
 }
