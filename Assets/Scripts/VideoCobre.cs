@@ -9,13 +9,21 @@ public class VideoCobre : MonoBehaviour
 
     IEnumerator Start()
     {
+        player.Prepare();
+        while (!player.isPrepared)
+        {
+            Debug.Log("waiting");
+            yield return null;
+        }
+        Debug.Log("VideoReady");
         player.Play();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         
         while(player.isPlaying)
         {
             yield return null;
         }
+        Debug.Log("VideoEnded");
         SceneManager.LoadScene(3);
     }
 
