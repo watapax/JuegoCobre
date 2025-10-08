@@ -4,6 +4,7 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 public class PoolFX : MonoBehaviour
 {
+    public Transform objectParents;
     public static PoolFX instance;
     public GameObject hitFX, explosionFX, explosionFX2, explosionFX3;
 
@@ -33,6 +34,7 @@ public class PoolFX : MonoBehaviour
         if (!hayDisponibles)
         {
             GameObject _hit = Instantiate(hitFX, pos, rot);
+            _hit.transform.parent = objectParents;
             hits.Add(_hit);
         }
     }
@@ -73,6 +75,7 @@ public class PoolFX : MonoBehaviour
         if (!hayDisponibles)
         {
             GameObject _explosion = Instantiate(explosionFX, pos, rot);
+            _explosion.transform.parent = objectParents;
             explosiones.Add(_explosion);
         }
     }
@@ -95,6 +98,7 @@ public class PoolFX : MonoBehaviour
         if (!hayDisponibles)
         {
             GameObject _explosion = Instantiate(explosionFX2, pos, rot);
+            _explosion.transform.parent=objectParents;
             explosiones2.Add(_explosion);
         }
     }
@@ -117,6 +121,7 @@ public class PoolFX : MonoBehaviour
         if (!hayDisponibles)
         {
             GameObject _explosion = Instantiate(explosionFX3, pos, rot);
+            _explosion.transform.parent = objectParents;
             explosiones3.Add(_explosion);
         }
     }

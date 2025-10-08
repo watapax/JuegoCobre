@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class GameManagerOleadas : MonoBehaviour
 {
+    public Transform poolParent;
     public Score scoreA, scoreB;
     public TextMeshProUGUI puntajeA, puntajeB;
     public static GameManagerOleadas instance;
@@ -169,6 +170,7 @@ public class GameManagerOleadas : MonoBehaviour
         if (!hayDisponibles)
         {
             GameObject _virus = Instantiate(virusPrefab);
+            _virus.transform.parent = poolParent;
             _virus.GetComponent<Virus>().SetearVirus(_spline, nivel);
             virusList.Add(_virus);
         }

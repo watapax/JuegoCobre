@@ -40,8 +40,9 @@ public class SoundManager : MonoBehaviour
     {
         float lenght = bgmSource.clip.length;
 
-        yield return new WaitForSeconds(lenght);
+        yield return new WaitForSeconds(lenght + 4);
         onLevelFinish?.Invoke();
+        DOTween.KillAll();
     }
 
     public void BajarVolumenMusica()
@@ -74,8 +75,9 @@ public class SoundManager : MonoBehaviour
 
     IEnumerator Final(float _t)
     {
-        yield return new WaitForSeconds(_t);
+        yield return new WaitForSeconds(_t + 4);
         onLevelFinish?.Invoke();
+        DOTween.KillAll();
     }
 
     public void GolpearVirus()
