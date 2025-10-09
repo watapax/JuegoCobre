@@ -38,11 +38,19 @@ public class SoundManager : MonoBehaviour
 
     IEnumerator FinishSong()
     {
-        float lenght = bgmSource.clip.length;
+        yield return new WaitForSeconds(1);
+        //float lenght = bgmSource.clip.length;
 
-        yield return new WaitForSeconds(lenght + 4);
-        onLevelFinish?.Invoke();
+        while(bgmSource.isPlaying)
+        {
+            print("esperando");
+            yield return null;
+        }
+
+        //yield return new WaitForSeconds(lenght + 4);
         DOTween.KillAll();
+        onLevelFinish?.Invoke();
+        
     }
 
     public void BajarVolumenMusica()

@@ -13,7 +13,7 @@ public class ProcesarCobre : MonoBehaviour
 
     private void Awake()
     {
-        score.puntaje = 0;
+        ResetearPuntaje();
     }
 
     public void Procesar(Vector3 pos)
@@ -25,5 +25,10 @@ public class ProcesarCobre : MonoBehaviour
         cantidadCobreProcesado++;
         score.puntaje = cantidadCobreProcesado;
         puntaje.ActualizarPuntaje(cantidadCobreProcesado);
+    }
+
+    public void ResetearPuntaje()
+    {
+        score.puntaje = 0;
     }
 }

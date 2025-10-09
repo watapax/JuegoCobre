@@ -13,6 +13,7 @@ public class FadeNegro : MonoBehaviour
     }
     public void Fade()
     {
+        print("fadeNegro");
         fondo.DOColor(Color.black, 4).OnComplete(() => evento?.Invoke());
     }
 

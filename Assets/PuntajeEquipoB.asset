@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad832d88232651944a17ff3bd1369ca9, type: 3}
   m_Name: PuntajeEquipoB
   m_EditorClassIdentifier: 
-  puntaje: 11
+  puntaje: 0

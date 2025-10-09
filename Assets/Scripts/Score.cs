@@ -3,4 +3,9 @@ using UnityEngine;
 public class Score : ScriptableObject
 {
     public int puntaje;
+
+    public void ResetPuntaje()
+    {
+        puntaje = 0;
+    }
 }
